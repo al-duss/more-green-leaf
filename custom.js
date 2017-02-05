@@ -60,7 +60,7 @@ $(function () {
             maxWidth: 400
         });
 
-        for (i = 0; i < data.intersection.length; i++){
+        for (i = 0; i < data["intersection"].length; i++){
             
             var location = new google.maps.LatLng(data[i]["lat"], data[i]["long"]); 
             
