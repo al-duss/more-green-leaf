@@ -84,7 +84,7 @@ $(function () {
                 map: map,
                 center: location,
                 //ajouter formule pour le radius
-                radius: 40,
+                radius: 120,
                 name: data["intersection"][i]["name"]+ " " +Math.round(data["intersection"][i]["arbres_necessaires"])+"  trees need to be planted to compensate."
             })
         
