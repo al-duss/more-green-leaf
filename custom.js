@@ -79,12 +79,12 @@ $(function () {
                 strokeColor: '#FF0000',
                 strokeOpacity: 0.0,
                 strokeWeight: 2,
-                fillColor: '#FF0000',
+                fillColor: '#FF0000',//Math.ceil(data["intersection"][i]["diff"])
                 fillOpacity: 0.35,
                 map: map,
                 center: location,
                 //ajouter formule pour le radius
-                radius: size(Math.ceil(data["intersection"][i]["diff"])),
+                radius: 40,
                 name: data["intersection"][i]["name"]+ " " +Math.round(data["intersection"][i]["arbres_necessaires"])+"  trees need to be planted to compensate."
             })
         
