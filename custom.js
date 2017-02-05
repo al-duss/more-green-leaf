@@ -67,10 +67,10 @@ $(function () {
             
             function size(radius){
                 if(radius > 100){
-                    return 100;
+                    return 300;
                 }
                 else {
-                    return radius*3;
+                    return radius*5;
                 }
             }
 
