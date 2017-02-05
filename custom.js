@@ -74,7 +74,7 @@ $(function () {
                 center: location,
                 //ajouter formule pour le radius
                 radius: data[i]["diff"]*100,
-                name: data.intersection[i].name
+                name: "hello"
             });
         
             console.log(data["intersection"][i]["name"]);
