@@ -66,13 +66,13 @@ $(function () {
             var location = new google.maps.LatLng(data["intersection"][i]["lat"], data["intersection"][i]["long"]); 
             
             function size(radius){
-                return Math.log(radius)/Math.log(1.1)*10;
-                // if(radius > 100){
-                //     return 300;
-                // }
-                // else {
-                //     return radius*5;
-                // }
+                //return Math.log(radius)/Math.log(1.1)*5;
+                if(radius > 100){
+                    return 300;
+                }
+                else {
+                    return radius*4;
+                }
             }
 
             var intersectionCircle = new google.maps.Circle({
