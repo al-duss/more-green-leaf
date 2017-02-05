@@ -33,9 +33,20 @@ $(function () {
 
         //dessiner les cercles sur la map
         // TODOOOOO
-        var strJSON = '{"intersection":[{"name":"Rose-de-Lima / Saint-Jacques","count":10241,"emissions":131.8704106643,"lat":"45.4812","long":"-73.583"},{"name":"Carri\u00e8res des / Lorimier","count":14584,"emissions":187.79397218319997,"lat":"45.5425","long":"-73.5881"},{"name":"B\u00e9langer / Ch\u00e2teaubriand","count":8742,"emissions":112.5682189266,"lat":"45.5386","long":"-73.6106"}]}';
+        var data;
+
+        var oReq = new XMLHttpRequest();
+        oReq.onload = reqListener;
+        oReq.open("get", "yourFile.txt", true);
+        oReq.send();
+
+        function reqListener(e) {
+            data = JSON.parse(this.responseText);
+        }
+
+        //var strJSON = '{"intersection":[{"name":"Rose-de-Lima / Saint-Jacques","count":10241,"emissions":131.8704106643,"lat":"45.4812","long":"-73.583"},{"name":"Carri\u00e8res des / Lorimier","count":14584,"emissions":187.79397218319997,"lat":"45.5425","long":"-73.5881"},{"name":"B\u00e9langer / Ch\u00e2teaubriand","count":8742,"emissions":112.5682189266,"lat":"45.5386","long":"-73.6106"}]}';
         
-        var data = JSON.parse(strJSON);
+        //var data = JSON.parse(strJSON);
         //data["intersection"][i]["name"];
         //data["intersection"][i]["count"];
         //data["intersection"][i]["lat"];
@@ -51,7 +62,7 @@ $(function () {
 
         for (i = 0; i < data.intersection.length; i++){
             
-            var location = new google.maps.LatLng(data["intersection"][i]["lat"], data["intersection"][i]["long"]); 
+            var location = new google.maps.LatLng(data[i]["lat"], data[i]["long"]); 
             
             var intersectionCircle = new google.maps.Circle({
                 strokeColor: '#FF0000',
@@ -62,7 +73,7 @@ $(function () {
                 map: map,
                 center: location,
                 //ajouter formule pour le radius
-                radius: 1000,
+                radius: data[i]["diff"]*100,
                 name: data.intersection[i].name
             });
         
