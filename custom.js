@@ -70,15 +70,15 @@ $(function () {
                 strokeOpacity: 0.0,
                 strokeWeight: 2,
                 fillColor: '#FF0000',
-                fillOpacity: 0.35,
+                fillOpacity: 0.10,
                 map: map,
                 center: location,
                 //ajouter formule pour le radius
-                radius: Math.ceil(data["intersection"][i]["diff"]),
+                radius: 1000,
                 name: "hello"
             });
         
-            console.log(data["intersection"][i]["diff"]);
+            // console.log(data["intersection"][i]["diff"]);
 
             google.maps.event.addListener(
                 intersectionCircle, 
