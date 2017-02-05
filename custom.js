@@ -37,7 +37,7 @@ $(function () {
 
         var oReq = new XMLHttpRequest();
         oReq.onload = reqListener;
-        oReq.open("get", "yourFile.txt", true);
+        oReq.open("get", "result.json", true);
         oReq.send();
 
         function reqListener(e) {
