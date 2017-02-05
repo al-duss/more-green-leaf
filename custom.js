@@ -73,7 +73,7 @@ $(function () {
                 map: map,
                 center: location,
                 //ajouter formule pour le radius
-                radius: data["intersection"][i]["diff"],
+                radius: Math.ceil(data["intersection"][i]["diff"]),
                 name: "hello"
             });
         
