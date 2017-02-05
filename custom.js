@@ -84,7 +84,7 @@ $(function () {
                 center: location,
                 //ajouter formule pour le radius
                 radius: size(Math.ceil(data["intersection"][i]["diff"])),
-                name: "hello"
+                name: data["intersection"][i]["name"]
             });
         
             // console.log(data["intersection"][i]["diff"]);
@@ -93,7 +93,7 @@ $(function () {
                 intersectionCircle, 
                 'click', 
                 function(){
-                    infowindow.setContent(this.name);
+                    infowindow.setContent(this.name + '\nYou must plant'+data["intersection"][i]["arbres_necessaires"]+"to compensate.");
                     infowindow.position = this.center;
                     infowindow.open(map, intersectionCircle);
                 }
