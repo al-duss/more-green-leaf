@@ -62,7 +62,7 @@ $(function () {
 
         for (i = 0; i < data["intersection"].length; i++){
             
-            var location = new google.maps.LatLng(data[i]["lat"], data[i]["long"]); 
+            var location = new google.maps.LatLng(data["intersection"][i]["lat"], data["intersection"][i]["long"]); 
             
             var intersectionCircle = new google.maps.Circle({
                 strokeColor: '#FF0000',
@@ -73,7 +73,7 @@ $(function () {
                 map: map,
                 center: location,
                 //ajouter formule pour le radius
-                radius: data[i]["diff"]*100,
+                radius: data["intersection"][i]["diff"]*100,
                 name: "hello"
             });
         
