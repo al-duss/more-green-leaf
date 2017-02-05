@@ -66,7 +66,7 @@ $(function () {
             var location = new google.maps.LatLng(data["intersection"][i]["lat"], data["intersection"][i]["long"]); 
             
             function size(radius){
-                return Math.log(radius)/Math.log(1.1)*30;
+                return Math.log(radius)/Math.log(1.1)*10;
                 // if(radius > 100){
                 //     return 300;
                 // }
@@ -85,8 +85,8 @@ $(function () {
                 center: location,
                 //ajouter formule pour le radius
                 radius: size(Math.ceil(data["intersection"][i]["diff"])),
-                name: data["intersection"][i]["name"] +Math.round(data["intersection"][i]["arbres_necessaires"])+" trees need to be planted to compensate."
-            });
+                name: data["intersection"][i]["name"]+ " " +Math.round(data["intersection"][i]["arbres_necessaires"])+"  trees need to be planted to compensate."
+            })
         
             // console.log(data["intersection"][i]["diff"]);
 
