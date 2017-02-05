@@ -1,4 +1,4 @@
-{
+var json_data = {
 	"intersection": [{
 		"co2_arbres": "5.120112111588734e-05",
 		"diff": "0.39061318707750486",

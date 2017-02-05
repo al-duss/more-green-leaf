@@ -1,3 +1,4 @@
+
 $(function () {
 
     function initMap() {
@@ -33,16 +34,16 @@ $(function () {
 
         //dessiner les cercles sur la map
         // TODOOOOO
-        var data;
+        var data = json_data;
 
-        var oReq = new XMLHttpRequest();
+        /*var oReq = new XMLHttpRequest();
         oReq.onload = reqListener;
         oReq.open("get", "result.json", true);
         oReq.send();
 
         function reqListener(e) {
             data = JSON.parse(this.responseText);
-        }
+        }*/
 
         //var strJSON = '{"intersection":[{"name":"Rose-de-Lima / Saint-Jacques","count":10241,"emissions":131.8704106643,"lat":"45.4812","long":"-73.583"},{"name":"Carri\u00e8res des / Lorimier","count":14584,"emissions":187.79397218319997,"lat":"45.5425","long":"-73.5881"},{"name":"B\u00e9langer / Ch\u00e2teaubriand","count":8742,"emissions":112.5682189266,"lat":"45.5386","long":"-73.6106"}]}';
         
