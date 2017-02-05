@@ -66,9 +66,7 @@ $(function () {
             var location = new google.maps.LatLng(data["intersection"][i]["lat"], data["intersection"][i]["long"]); 
             
             function size(radius){
-                var x = Math.log(radius)/Math.log(100);
-                console.log(x);
-                return x;
+                return Math.log(radius)/Math.log(1.1)*80;
                 // if(radius > 100){
                 //     return 300;
                 // }
