@@ -65,16 +65,25 @@ $(function () {
             
             var location = new google.maps.LatLng(data["intersection"][i]["lat"], data["intersection"][i]["long"]); 
             
+            function size(radius){
+                if(radius > 100){
+                    return 100;
+                }
+                else {
+                    return radius*3;
+                }
+            }
+
             var intersectionCircle = new google.maps.Circle({
                 strokeColor: '#FF0000',
                 strokeOpacity: 0.0,
                 strokeWeight: 2,
                 fillColor: '#FF0000',
-                fillOpacity: 0.10,
+                fillOpacity: 0.35,
                 map: map,
                 center: location,
                 //ajouter formule pour le radius
-                radius: 1000,
+                radius: size(Math.ceil(data["intersection"][i]["diff"])),
                 name: "hello"
             });
         
