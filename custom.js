@@ -84,7 +84,7 @@ $(function () {
                 center: location,
                 //ajouter formule pour le radius
                 radius: size(Math.ceil(data["intersection"][i]["diff"])),
-                name: data["intersection"][i]["name"]+ '\nYou must plant'+data["intersection"][i]["arbres_necessaires"]+"to compensate."
+                name: data["intersection"][i]["name"]+ '\nYou must plant '+data["intersection"][i]["arbres_necessaires"]+" trees to compensate."
             });
         
             // console.log(data["intersection"][i]["diff"]);
