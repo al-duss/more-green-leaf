@@ -60,7 +60,7 @@ $(function () {
             maxWidth: 400
         });
 
-        for (i = 0; i < data.intersection.length; i++){
+        for (i = 0; i < data.length; i++){
             
             var location = new google.maps.LatLng(data[i]["lat"], data[i]["long"]); 
             
@@ -77,7 +77,7 @@ $(function () {
                 name: "hello"
             });
         
-            console.log(data["intersection"][i]["name"]);
+            console.log(data[i]["diff"]);
 
             google.maps.event.addListener(
                 intersectionCircle, 
