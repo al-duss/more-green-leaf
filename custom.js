@@ -65,13 +65,17 @@ $(function () {
             
             var location = new google.maps.LatLng(data["intersection"][i]["lat"], data["intersection"][i]["long"]); 
             
-            function size(radius){
-                //return Math.log(radius)/Math.log(1.1)*5;
-                if(radius > 100){
-                    return 300;
-                }
-                else {
-                    return radius*4;
+            function color(diff){
+                if(diff < 4){
+                    return '#FFCC0';
+                } else if (diff < 8){
+                    return '#ff9900';
+                } else if (diff < 12){
+                    return '#ff9900';
+                } else if (diff < 20){
+                    return '#FF3300'
+                } else {
+                    return '#FF0000'
                 }
             }
 
@@ -79,12 +83,12 @@ $(function () {
                 strokeColor: '#FF0000',
                 strokeOpacity: 0.0,
                 strokeWeight: 2,
-                fillColor: '#FF0000',//Math.ceil(data["intersection"][i]["diff"])
+                fillColor: color(Math.ceil(data["intersection"][i]["diff"])),
                 fillOpacity: 0.35,
                 map: map,
                 center: location,
                 //ajouter formule pour le radius
-                radius: 120,
+                radius: 132,
                 name: data["intersection"][i]["name"]+ " " +Math.round(data["intersection"][i]["arbres_necessaires"])+"  trees need to be planted to compensate."
             })
         
